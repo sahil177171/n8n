@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: n8n
+    env: node
+    plan: free
+    buildCommand: |
+      curl -fsSL https://get.pnpm.io/install.sh | sh -
+      export PATH="$HOME/.local/share/pnpm:$PATH"
+      pnpm install --frozen-lockfile
+    startCommand: pnpm run start
+    envVars:
+      - key: N8N_PORT
+        value: 10000
+      - key: WEBHOOK_TUNNEL_URL
+        value: https://n8n-wznt.onrender.com
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PROTOCOL
+        value: http
+      - key: N8N_BASIC_AUTH_USER
+        value: sahiladmin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: sahil@1234
