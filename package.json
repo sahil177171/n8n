@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "run-script-os": "^1.0.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["sqlite3"]
   }
 }
