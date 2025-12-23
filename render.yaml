@@ -5,8 +5,11 @@ services:
     plan: free
     buildCommand: |
       curl -fsSL https://get.pnpm.io/install.sh | sh -
-      ~/.local/share/pnpm/pnpm install --frozen-lockfile
-    startCommand: ~/.local/share/pnpm/pnpm run start
+      export PATH="$HOME/.local/share/pnpm:$PATH"
+      pnpm install --frozen-lockfile
+    startCommand: |
+      export PATH="$HOME/.local/share/pnpm:$PATH"
+      pnpm run start
     envVars:
       - key: N8N_PORT
         value: 10000
