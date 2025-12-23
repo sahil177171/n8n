@@ -4,9 +4,9 @@
   "private": true,
   "engines": {
     "node": "20.x",
-    "pnpm": ">=10.22.0"
+    "pnpm": ">=8.6.0"
   },
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@8.6.0",
   "workspaces": [
     "packages/*"
   ],
@@ -16,14 +16,5 @@
   },
   "devDependencies": {
     "run-script-os": "^1.0.7"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sqlite3"
-    ],
-    "overrides": {
-      "glob@10": "10.5.0",
-      "glob@7": "7.2.3"
-    }
   }
 }
