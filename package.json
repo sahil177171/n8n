@@ -11,20 +11,16 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "node scripts/prepare.mjs",
-    "preinstall": "node scripts/block-npm-install.js",
-    "build": "turbo run build",
     "start": "run-script-os",
-    "start:default": "cd packages/cli/bin && ./n8n",
-    "start:tunnel": "./packages/cli/bin/n8n start --tunnel",
-    "start:windows": "cd packages/cli/bin && n8n"
+    "start:default": "cd packages/cli/bin && ./n8n"
   },
   "devDependencies": {
-    "@types/node": "*",
     "run-script-os": "^1.0.7"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["sqlite3"],
+    "onlyBuiltDependencies": [
+      "sqlite3"
+    ],
     "overrides": {
       "glob@10": "10.5.0",
       "glob@7": "7.2.3"
