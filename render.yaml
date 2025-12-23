@@ -4,10 +4,12 @@ services:
     env: node
     plan: free
     buildCommand: |
-      SHELL=/bin/bash && curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh - && export PATH="$HOME/.local/share/pnpm:$PATH" && pnpm install --frozen-lockfile
+      SHELL=/bin/bash && curl -fsSL https://get.pnpm.io/install.sh | SHELL=/bin/bash sh - && export PATH="$HOME/.local/share/pnpm:$PATH" && pnpm install
     startCommand: |
       export PATH="$HOME/.local/share/pnpm:$PATH" && pnpm run start
     envVars:
+      - key: NODE_VERSION
+        value: 20.19.0
       - key: N8N_PORT
         value: 10000
       - key: WEBHOOK_TUNNEL_URL
